@@ -7,7 +7,7 @@ export default function Home() {
 	const { workouts, dispatch } = useWorkoutsContext();
 	useEffect(() => {
 		async function getWorkouts() {
-			const response = await fetch('http://localhost:4000/api/workouts');
+			const response = await fetch('https://workout-buddy-b2th.onrender.com/api/workouts');
 			const json = await response.json();
 
 			if (response.ok) {
@@ -18,8 +18,8 @@ export default function Home() {
 		getWorkouts();
 	}, [dispatch]); // the function render once if the "[]" dependency array is empty
 	return (
-		<div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 my-20">
-			<div className="container col-span-1 lg:col-span-2 flex flex-col gap-8">
+		<div className="container grid grid-cols-1 gap-20 my-20 md:grid-cols-2 lg:grid-cols-3">
+			<div className="container flex flex-col col-span-1 gap-8 lg:col-span-2">
 				{workouts && workouts.map((workout, i) => <Workout key={i} workout={workout} />)}
 			</div>
 			<div>

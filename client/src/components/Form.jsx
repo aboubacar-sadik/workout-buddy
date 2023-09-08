@@ -16,7 +16,7 @@ export default function Form() {
 
 		const workout = { title, reps, load };
 
-		const response = await fetch('http://localhost:4000/api/workouts', {
+		const response = await fetch('https://workout-buddy-b2th.onrender.com/api/workouts', {
 			method: 'POST',
 			body: JSON.stringify(workout),
 			headers: {
@@ -74,11 +74,11 @@ export default function Form() {
 					emptyFields.includes('load') ? 'outline outline-red-500' : ''
 				}`}
 			/>
-			<button onClick={handleSubmit} className="px-4 py-2 rounded-md bg-green-900 text-white">
+			<button onClick={handleSubmit} className="px-4 py-2 text-white bg-green-900 rounded-md">
 				Add
 			</button>
 			{error && (
-				<span className=" py-2 text-center mt-3 bg-red-100 border border-red-500 rounded-md text-red-500">
+				<span className="py-2 mt-3 text-center text-red-500 bg-red-100 border border-red-500 rounded-md ">
 					{error}
 				</span>
 			)}
