@@ -20,7 +20,13 @@ export default function Home() {
 	return (
 		<div className="container grid grid-cols-1 gap-20 my-20 md:grid-cols-2 lg:grid-cols-3">
 			<div className="container flex flex-col col-span-1 gap-8 lg:col-span-2">
-				{workouts && workouts.map((workout, i) => <Workout key={i} workout={workout} />)}
+				{workouts ? (
+					workouts.map((workout, i) => <Workout key={i} workout={workout} />)
+				) : (
+					<div className="flex items-center justify-center w-full h-full text-2xl bg-[#b3b4b7] rounded-lg">
+						Loading
+					</div>
+				)}
 			</div>
 			<div>
 				<Form />
