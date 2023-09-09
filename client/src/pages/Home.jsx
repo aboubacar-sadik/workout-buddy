@@ -30,12 +30,12 @@ export default function Home() {
 								Nothing ro show
 							</div>
 						);
-
-					return (
-						<div className="flex items-center justify-center w-full h-full text-2xl bg-[#b3b4b7] rounded-lg">
-							Loading
-						</div>
-					);
+					if (!workouts)
+						return (
+							<div className="flex items-center justify-center w-full h-full text-2xl bg-[#b3b4b7] rounded-lg">
+								Loading
+							</div>
+						);
 				})()}
 			</div>
 			<div>
