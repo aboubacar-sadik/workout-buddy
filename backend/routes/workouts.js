@@ -1,4 +1,4 @@
-import express from "express";
+const express = require('express')
 import { GetWorkout, createWorkout, deleteWorkout, getAllWorkouts, updateWorkout } from "../controllers/workoutController.js";
 
 
@@ -21,4 +21,4 @@ router.delete('/:id', deleteWorkout)
 router.patch('/:id', updateWorkout)
 
 // export the router
-export default router
+module.exports = router 

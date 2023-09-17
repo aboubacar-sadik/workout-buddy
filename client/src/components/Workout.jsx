@@ -6,12 +6,9 @@ export default function Workout({ workout }) {
 	const { dispatch } = useWorkoutsContext();
 
 	async function handleClick() {
-		const response = await fetch(
-			`https://workout-buddy-b2th.onrender.com/api/workouts/${workout._id}`,
-			{
-				method: 'DELETE',
-			}
-		);
+		const response = await fetch(` http://localhost:4000/api/workouts/${workout._id}`, {
+			method: 'DELETE',
+		});
 
 		const json = await response.json();
 

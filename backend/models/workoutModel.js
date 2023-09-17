@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
@@ -17,6 +17,4 @@ const workoutSchema = new Schema({
     }
 }, { timestamps: true }) // "timestamps" assigns a createdAt property to the document
 
-const workoutModel = mongoose.model('Workout', workoutSchema, 'workouts')
-
-export default workoutModel
+module.exports = mongoose.model('Workout', workoutSchema, 'workouts')

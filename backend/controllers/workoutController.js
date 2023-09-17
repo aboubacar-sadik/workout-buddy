@@ -1,5 +1,5 @@
 // import the workout model created in "../models/workoutModel.js" with mongoose
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 import Workouts from '../models/workoutModel.js'
 
 // get all workouts
