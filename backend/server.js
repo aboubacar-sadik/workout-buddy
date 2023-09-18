@@ -1,12 +1,12 @@
-import express from 'express'
-import 'dotenv/config'
+const express = require('express')
+require('dotenv').config()
 // import all routes from "workouts.js"
-import workoutRoutes from './routes/workouts.js'
-import userRoutes from './routes/user.js'
+const workoutRoutes = require('./routes/workouts.js')
+const userRoutes = require('./routes/user.js')
 // import mongoose
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 // import cors
-import cors from 'cors'
+const cors = require('cors')
 
 // express app
 const app = express()

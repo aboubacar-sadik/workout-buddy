@@ -1,5 +1,5 @@
 const express = require('express')
-import { GetWorkout, createWorkout, deleteWorkout, getAllWorkouts, updateWorkout } from "../controllers/workoutController.js";
+const { GetWorkout, createWorkout, deleteWorkout, getAllWorkouts, updateWorkout } = require("../controllers/workoutController.js");
 
 
 // create instance of router

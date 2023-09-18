@@ -1,16 +1,16 @@
 // import the workout model created in "../models/workoutModel.js" with mongoose
 const mongoose = require('mongoose')
-import Workouts from '../models/workoutModel.js'
+const Workouts = require('../models/workoutModel.js')
 
 // get all workouts
-export async function getAllWorkouts(req, res) {
+async function getAllWorkouts(req, res) {
     const workouts = await Workouts.find({})
 
     res.status(200).json(workouts)
 }
 
 // get a single workout
-export async function GetWorkout(req, res) {
+async function GetWorkout(req, res) {
     const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -28,7 +28,7 @@ export async function GetWorkout(req, res) {
 }
 
 // create new a workout
-export async function createWorkout(req, res) {
+async function createWorkout(req, res) {
     ///// because of middleware in server.js "app.use(expres.json())", 
     ///// all request body that comes along with the request will be passed onto the "req" object, so we can use it. 
     ///// EX: when we send a title, excerpt, slug from a form, 
@@ -65,7 +65,7 @@ export async function createWorkout(req, res) {
 
 // delete a workout
 
-export async function deleteWorkout(req, res) {
+async function deleteWorkout(req, res) {
     const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -83,7 +83,7 @@ export async function deleteWorkout(req, res) {
 
 // update a workout
 
-export async function updateWorkout(req, res) {
+async function updateWorkout(req, res) {
     const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -99,4 +99,8 @@ export async function updateWorkout(req, res) {
     }
 
     res.status(200).json(workout)
+}
+
+module.exports = {
+    getAllWorkouts, GetWorkout, createWorkout, deleteWorkout, updateWorkout
 }
