@@ -18,9 +18,16 @@ export default function Home() {
 		getWorkouts();
 	}, [dispatch]); // the function render once if the "[]" dependency array is empty
 	return (
-		<div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 my-20">
-			<div className="container col-span-1 lg:col-span-2 flex flex-col gap-8">
-				{workouts && workouts.map((workout, i) => <Workout key={i} workout={workout} />)}
+		<div className="container grid grid-cols-1 gap-20 my-20 md:grid-cols-2 lg:grid-cols-3">
+			<div className="container flex flex-col col-span-1 gap-8 lg:col-span-2">
+				{/* {workouts && workouts.map((workout, i) => <Workout key={i} workout={workout} />)} */}
+				{workouts && workouts.length > 0 ? (
+					workouts.map((workout, i) => <Workout key={i} workout={workout} />)
+				) : (
+					<div className="flex items-center justify-center h-full text-3xl uppercase">
+						Nothing to show
+					</div>
+				)}
 			</div>
 			<div>
 				<Form />
